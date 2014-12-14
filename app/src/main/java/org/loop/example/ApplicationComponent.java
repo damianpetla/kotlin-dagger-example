@@ -5,8 +5,8 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 /**
- * This interface must be kept in java. Otherwise Dagger classes are not generated.
- */
+* Created by loop on 14/12/14.
+*/
 @Singleton
 @Component(modules = AndroidModule.class)
 public interface ApplicationComponent {
