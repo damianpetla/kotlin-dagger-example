@@ -7,7 +7,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:1.0.0'
         //kotlin required plugin
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.9.976'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.10.4'
         //Dagger 2 required plugin
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
     }
