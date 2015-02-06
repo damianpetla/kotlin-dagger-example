@@ -19,3 +19,24 @@ Fortunately, setter injection works for Kotlin and syntax is simple:
 ```kotlin
 var locationManager: LocationManager? = null
 [Inject] set
+```
+
+**How to use `@Named` property qualifier**
+
+If you are going to use multiple `@Provides` for the same type you would expect injecting property like this:
+```kotlin
+var typeface: Typeface? = null
+[Inject Named("bold")] set
+```
+Unfortunatelly, it won't work. It will not even compile. 
+
+Proper way is
+```kotlin
+var typeface: Typeface? = null
+[Inject] set([Named("bold")] value) {
+    $typeface = value
+}
+```
+
+Be careful where you call Dagger's `inject(this)` method. If you do it from the class constructor it won't work becasue after injection, property is initialised with `null` value. If you do it in `Activity` or `Fragment`, `onCreate()` will be just fine. If not, you have to create your own function and call it explicitly wherever you initialise your class.
+For some more datails see issue [KT-6740](https://youtrack.jetbrains.com/issue/KT-6740)
