@@ -1,15 +1,23 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-android-extensions:0.11.91'
+    }
+}
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.0"
 
     defaultConfig {
         applicationId "org.loop.example"
-        minSdkVersion 19
-        targetSdkVersion 21
+        minSdkVersion 16
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -28,11 +36,28 @@ android {
 dependencies {
     //automatically added dependencies when project was created
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    //kotlin dependency
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.10.4'
-    //Dagger 2 dependencies
+    compile 'com.android.support:support-annotations:22'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.11.91'
+    //Android backward dependencies
+    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile 'com.android.support:recyclerview-v7:22.0.0'
+    //Networking dependencies
+    compile 'com.squareup.retrofit:retrofit:1.8.0'
+    compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'com.squareup.okhttp:okhttp:2.1.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.1.0'
+    //Rx dependency
+    compile 'io.reactivex:rxandroid:0.23.0'
+    //DI dependencies
     compile 'com.google.dagger:dagger:2.0-SNAPSHOT'
     apt 'com.google.dagger:dagger-compiler:2.0-SNAPSHOT'
     provided 'org.glassfish:javax.annotation:10.0-b28'
+    //UI widget dependencies
+    compile 'com.android.support:palette-v7:22.0.0'
+    //Test dependencies
+
+    androidTestCompile 'commons-io:commons-io:2.4'
+    // Testing-only dependencies
+    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
 }

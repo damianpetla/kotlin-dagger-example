@@ -5,9 +5,9 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.android.tools.build:gradle:1.1.0'
         //kotlin required plugin
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.10.4'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.11.91'
         //Dagger 2 required plugin
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
     }

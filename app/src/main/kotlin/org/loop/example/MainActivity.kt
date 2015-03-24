@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.location.LocationManager
 import javax.inject.Inject
+import kotlinx.android.synthetic.activity_main.*
 
 public class MainActivity : ActionBarActivity() {
 
@@ -15,8 +16,9 @@ public class MainActivity : ActionBarActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        (getApplication() as MyApplication).getComponent().inject(this)
-        println("Activity: $locationManager")
+        MyApplication.graph.inject(this)
+        assert(locationManager != null)
+        assert(textView != null)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
