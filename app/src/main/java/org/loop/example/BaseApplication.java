@@ -8,7 +8,7 @@ import android.app.Application;
 public abstract class BaseApplication extends Application {
 
     protected ApplicationComponent createApplicationComponent() {
-        return Dagger_ApplicationComponent.builder()
+        return DaggerApplicationComponent.builder()
                 .androidModule(new AndroidModule(this)).build();
     }
 
