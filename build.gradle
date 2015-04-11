@@ -17,9 +17,5 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            //Dagger 2 snapshots
-            url 'https://oss.sonatype.org/content/repositories/snapshots/'
-        }
     }
 }
