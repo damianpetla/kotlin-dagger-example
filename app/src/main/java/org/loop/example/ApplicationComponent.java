@@ -5,8 +5,8 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 /**
-* Created by loop on 14/12/14.
-*/
+ * Created by loop on 14/12/14.
+ */
 @Singleton
 @Component(modules = AndroidModule.class)
 public interface ApplicationComponent {

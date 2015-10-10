@@ -1,8 +1,7 @@
-package se.omni.dagger
+package org.loop.example
 
-
-import java.lang.annotation.RetentionPolicy
 import javax.inject.Qualifier
+
 
 /**
  * Created by loop on 09/12/14.

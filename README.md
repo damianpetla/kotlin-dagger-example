@@ -12,12 +12,12 @@ It's based on Dagger 2 [example](https://github.com/google/dagger/tree/master/ex
 
 This will not work:
 ```kotlin
-Inject var locationManager: LocationManager? = null
+@Inject var locationManager: LocationManager? = null
 ```
 Fortunately, setter injection works for Kotlin and syntax is simple:
 ```kotlin
-var locationManager: LocationManager? = null
-[Inject] set
+lateinit var locationManager: LocationManager
+    @Inject set
 ```
 
 **How to use `@Named` property qualifier**
@@ -25,14 +25,14 @@ var locationManager: LocationManager? = null
 If you are going to use multiple `@Provides` for the same type you would expect injecting property like this:
 ```kotlin
 var typeface: Typeface? = null
-[Inject Named("bold")] set
+@Inject @Named("bold") set
 ```
 Unfortunatelly, it won't work. It will not even compile. 
 
 Proper way is
 ```kotlin
 var typeface: Typeface? = null
-[Inject] set([Named("bold")] value) {
-    $typeface = value
+@Inject set(@Named("bold") value) {
+    field = value
 }
 ```

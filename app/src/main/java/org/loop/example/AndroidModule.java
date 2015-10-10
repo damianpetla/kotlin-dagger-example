@@ -8,7 +8,6 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import se.omni.dagger.ForApplication;
 
 /**
  * A module for Android-specific dependencies which require a {@link android.content.Context} or {@link
@@ -24,6 +23,7 @@ public class AndroidModule {
 
     /**
      * Allow the application context to be injected but require that it be annotated with {@link ForApplication
+     *
      * @Annotation} to explicitly differentiate it from an activity context.
      */
     @Provides
