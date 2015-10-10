@@ -2,7 +2,6 @@ package org.loop.example
 
 import android.location.LocationManager
 import javax.inject.Inject
-import kotlin.properties.Delegates
 
 
 /**
@@ -13,10 +12,10 @@ public class MyApplication : BaseApplication() {
 
     companion object {
         //platformStatic allow access it from java code
-        @JvmStatic public var graph: ApplicationComponent by Delegates.notNull()
+        @JvmStatic lateinit public var graph: ApplicationComponent
     }
 
-    var locationManager: LocationManager? = null
+    lateinit var locationManager: LocationManager
         @Inject set
 
     override fun onCreate() {

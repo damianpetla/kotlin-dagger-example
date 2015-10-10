@@ -10,14 +10,13 @@ import javax.inject.Inject
 
 public class MainActivity : AppCompatActivity() {
 
-    var locationManager: LocationManager? = null
+    lateinit var locationManager: LocationManager
         @Inject set
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         MyApplication.graph.inject(this)
-        assert(locationManager != null)
         assert(textView != null)
     }
 
