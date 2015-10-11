@@ -11,17 +11,6 @@ Classes and interfaces that Dagger use for generating implementations must be ke
 
 ---
 
-If DataBinding library is used multiple dagger annotations must be implemented differently, the old way: 
-
-```
-var something: String? = null
-    @Inject set(@Named("something") value) {
-        field = value
-    }
-```
-
----
-
 When `lateinit` modifier is used, your variable cannot be used in `init{}` block. It will not compile. So in that case I suggest to move code from that block into a separate function and then call that function from `init{}` block.
 
 ---

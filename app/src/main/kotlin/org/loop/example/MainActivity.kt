@@ -17,10 +17,10 @@ public class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var locationManager: LocationManager
 
-    @Inject @Named("something")
+    @field:[Inject Named("something")]
     lateinit var something: String
 
-    @Inject @Named("somethingElse")
+    @field:[Inject Named("somethingElse")]
     lateinit var somethingElse: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
