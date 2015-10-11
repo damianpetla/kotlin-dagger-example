@@ -7,8 +7,11 @@ It's based on Dagger 2 [example](https://github.com/google/dagger/tree/master/ex
 
 ##Known issues/limitations
 
-1. Classes and interfaces that Dagger use for generating implementations must be kept in Java. If it's moved to Kotlin it won't be generated e.g. `AndroidModule`, `ApplicationComponent`
-2. If DataBinding library is used multiple dagger annotations must be implemented differently, the old way:
+Classes and interfaces that Dagger use for generating implementations must be kept in Java. If it's moved to Kotlin it won't be generated e.g. `AndroidModule`, `ApplicationComponent`
+
+---
+
+If DataBinding library is used multiple dagger annotations must be implemented differently, the old way: 
 
 ```
 var something: String? = null
@@ -17,7 +20,11 @@ var something: String? = null
     }
 ```
 
-3. When `lateinit` modifier is used, your variable cannot be used in `init{}` block. It will not compile. So in that case I suggest to move code from that block into a separate function and then call that function from `init{}` block.
+---
+
+When `lateinit` modifier is used, your variable cannot be used in `init{}` block. It will not compile. So in that case I suggest to move code from that block into a separate function and then call that function from `init{}` block.
+
+---
 
 Thanks to `apt` library it's possible to use dagger injection in Kotlin.
 There is also 'kapt' library from JetBrains but it requires using `SNAPSHOT` version of kotlin plugin.
