@@ -8,31 +8,14 @@ It's based on Dagger 2 [example](https://github.com/google/dagger/tree/master/ex
 ##Known issues/limitations
 
 1. Classes and interfaces that Dagger use for generating implementations must be kept in Java. If it's moved to Kotlin it won't be generated e.g. `AndroidModule`, `ApplicationComponent`
-2. Dagger's field injection is not working within Kotlin files.
 
-This will not work:
-```kotlin
-@Inject var locationManager: LocationManager? = null
-```
-Fortunately, setter injection works for Kotlin and syntax is simple:
-```kotlin
-lateinit var locationManager: LocationManager
-    @Inject set
-```
+Thanks to `apt` library it's possible to use dagger injection in Kotlin.
+There is also 'kapt' library from JetBrains but it requires using `SNAPSHOT` version of kotlin plugin.
+After official release of `kapt` I will try to use it and see if dagger's classes can be moved to Kotlin.
 
-**How to use `@Named` property qualifier**
+##More than Dagger
 
-If you are going to use multiple `@Provides` for the same type you would expect injecting property like this:
-```kotlin
-var typeface: Typeface? = null
-@Inject @Named("bold") set
-```
-Unfortunatelly, it won't work. It will not even compile. 
-
-Proper way is
-```kotlin
-var typeface: Typeface? = null
-@Inject set(@Named("bold") value) {
-    field = value
-}
-```
+This sample project includes some more dependencies which are very usefull. It's like a base setup for almost every project using Kotlin.
+So you will find there Anko libraries. You can uncomment Anko's DSL libraries if you need them.
+There is also a set of Rx dependencies. Rx works really great with Kotlin.
+At last but not least there my favourite networking dependencies from Square.

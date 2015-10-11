@@ -15,8 +15,8 @@ public class MyApplication : BaseApplication() {
         @JvmStatic lateinit public var graph: ApplicationComponent
     }
 
+    @Inject
     lateinit var locationManager: LocationManager
-        @Inject set
 
     override fun onCreate() {
         super.onCreate()

@@ -14,18 +14,14 @@ public class MainActivity : AppCompatActivity() {
 
     val TAG = MainActivity::class.java.name
 
+    @Inject
     lateinit var locationManager: LocationManager
-        @Inject set
 
-    var something: String? = null
-        @Inject set(@Named("something") value) {
-            field = value
-        }
+    @Inject @Named("something")
+    lateinit var something: String
 
-    var somethingElse: String = ""
-        @Inject set(@Named("somethingElse") value) {
-            field = value
-        }
+    @Inject @Named("somethingElse")
+    lateinit var somethingElse: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
