@@ -17,6 +17,8 @@ var something: String? = null
     }
 ```
 
+3. When `lateinit` modifier is used, your variable cannot be used in `init{}` block. It will not compile. So in that case I suggest to move code from that block into a separate function and then call that function from `init{}` block.
+
 Thanks to `apt` library it's possible to use dagger injection in Kotlin.
 There is also 'kapt' library from JetBrains but it requires using `SNAPSHOT` version of kotlin plugin.
 After official release of `kapt` I will try to use it and see if dagger's classes can be moved to Kotlin.
