@@ -20,27 +20,27 @@ class AndroidModule(private val application: Application) {
     @Provides
     @Singleton
     @ForApplication
-    internal fun provideApplicationContext(): Context {
+    fun provideApplicationContext(): Context {
         return application
     }
 
     @Provides
     @Singleton
-    internal fun provideLocationManager(): LocationManager {
+    fun provideLocationManager(): LocationManager {
         return application.getSystemService(Context.LOCATION_SERVICE) as LocationManager
     }
 
     @Provides
     @Singleton
     @Named("something")
-    internal fun provideSomething(): String {
+    fun provideSomething(): String {
         return "something"
     }
 
     @Provides
     @Singleton
     @Named("somethingElse")
-    internal fun provideSomethingElse(): String {
+    fun provideSomethingElse(): String {
         return "somethingElse"
     }
 

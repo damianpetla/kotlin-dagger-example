@@ -36,7 +36,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //Kotlin dependencies including Anko
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'org.jetbrains.anko:anko-support-v4:0.7.1'
+    compile 'org.jetbrains.anko:anko-support-v4:0.7.3'
     /**
      * Anko's DSL dependencies
      */
@@ -49,21 +49,21 @@ dependencies {
 //    compile 'org.jetbrains.anko:anko-appcompat-v7:0.7.1'
 
     //Dagger 2 dependencies
-    compile 'com.google.dagger:dagger:2.0.1'
-    kapt 'com.google.dagger:dagger-compiler:2.0.1'
+    compile 'com.google.dagger:dagger:2.0.2'
+    kapt 'com.google.dagger:dagger-compiler:2.0.2'
     provided 'org.glassfish:javax.annotation:10.0-b28'
     //Android basic dependencies
-    compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.android.support:recyclerview-v7:23.1.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
     //Networking dependencies
     compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
     compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
     compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
     compile 'com.squareup.picasso:picasso:2.5.2'
     //Rx dependencies
-    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxjava:1.0.16'
     compile 'io.reactivex:rxandroid:1.0.1'
-    compile 'io.reactivex:rxkotlin:0.22.14'
+    compile 'io.reactivex:rxkotlin:0.24.100'
     //Test dependencies
     androidTestCompile 'commons-io:commons-io:2.4'
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
