@@ -6,11 +6,11 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import kotlinx.android.synthetic.activity_main.textView
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 import javax.inject.Named
 
-public class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     val TAG = MainActivity::class.java.name
 

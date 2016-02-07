@@ -9,11 +9,11 @@ import javax.inject.Inject
  * Created by loop on 09/12/14.
  */
 
-public class MyApplication : Application() {
+class MyApplication : Application() {
 
     companion object {
         //platformStatic allow access it from java code
-        @JvmStatic lateinit public var graph: ApplicationComponent
+        @JvmStatic lateinit var graph: ApplicationComponent
     }
 
     @Inject
