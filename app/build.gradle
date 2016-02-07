@@ -33,8 +33,6 @@ kapt {
 }
 
 dependencies {
-    //multidex dependency
-    compile 'com.android.support:multidex:1.0.1'
     //automatically added dependencies when project was created
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //Kotlin dependencies including Anko
