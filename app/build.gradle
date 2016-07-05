@@ -3,13 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "org.loop.example"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
@@ -38,7 +38,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //Kotlin dependencies including Anko
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'org.jetbrains.anko:anko-support-v4:0.8.3'
+    compile 'org.jetbrains.anko:anko-support-v4:0.9'
     /**
      * Anko's DSL dependencies
      */
@@ -55,16 +55,16 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.4'
     provided 'org.glassfish:javax.annotation:10.0-b28'
     //Android basic dependencies
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
     //Networking dependencies
 //    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
 //    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
 //    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
 //    compile 'com.squareup.picasso:picasso:2.5.2'
     //Rx dependencies
-    compile 'io.reactivex:rxandroid:1.2.0'
-    compile 'io.reactivex:rxkotlin:0.55.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxkotlin:0.60.0'
     //Test dependencies
     androidTestCompile 'commons-io:commons-io:2.4'
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
