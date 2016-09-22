@@ -14,4 +14,4 @@ When `lateinit` modifier is used, your variable cannot be used in `init{}` block
 This sample project includes some more dependencies which are very usefull. It's like a base setup for almost every project using Kotlin.
 So you will find there Anko libraries. You can uncomment Anko's DSL libraries if you need them.
 There is also a set of Rx dependencies. Rx works really great with Kotlin.
-At last but not least there my favourite networking dependencies from Square.
+And last but not least there my favourite networking dependencies from Square.
