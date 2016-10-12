@@ -1,10 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
         applicationId "org.loop.example"
@@ -19,18 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        androidTest.java.srcDirs += 'src/androidTest/kotlin'
-    }
     dexOptions {
         javaMaxHeapSize "2048M"
     }
     compileOptions.incremental = false
-}
-
-kapt {
-    generateStubs = true
 }
 
 dependencies {
@@ -55,8 +48,8 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.4'
     provided 'org.glassfish:javax.annotation:10.0-b28'
     //Android basic dependencies
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
     //Networking dependencies
 //    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
 //    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
@@ -71,11 +64,3 @@ dependencies {
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
-    }
-}
