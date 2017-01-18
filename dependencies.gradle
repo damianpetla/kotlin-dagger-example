@@ -1,0 +1,41 @@
+allprojects {
+  repositories {
+    jcenter()
+  }
+}
+
+ext {
+
+  compiler = [kotlin: "1.0.6"]
+
+  build = [gradle    : "2.2.0",
+           buildTools: "24.2.1"]
+
+  buildPlugins = [gradle: "com.android.tools.build:gradle:$build.gradle",
+                  kotlin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$compiler.kotlin"]
+
+  ankoVersion = "0.9"
+  daggerVersion = "2.4"
+  annotationVersion = "10.0-b28"
+  rxAndroidVersion = "1.2.1"
+  rxKotlinVersion = "0.60.0"
+  commonsIoVersion = "2.4"
+  testingSupportVersion = "0.1"
+  espressoVersion = "2.0"
+
+  presentationDependencies = [kotlinStdLib  : "org.jetbrains.kotlin:kotlin-stdlib:$compiler.kotlin",
+                              anko          : "org.jetbrains.anko:anko-support-v4:$ankoVersion",
+                              dagger        : "com.google.dagger:dagger:$daggerVersion",
+                              daggerCompiler: "com.google.dagger:dagger-compiler:$daggerVersion",
+                              annotations   : "org.glassfish:javax.annotation:$annotationVersion",
+                              appcompat     : "com.android.support:appcompat-v7:$build.buildTools",
+                              recyclerView  : "com.android.support:recyclerview-v7:$build.buildTools",
+                              rxAndroid     : "io.reactivex:rxandroid:$rxAndroidVersion",
+                              rxKotlin      : "io.reactivex:rxkotlin:$rxKotlinVersion"]
+
+  presentationTestDependencies = [commonsIo     : "commons-io:commons-io:$commonsIoVersion",
+                                  testingSupport: "com.android.support.test:testing-support-lib:$testingSupportVersion",
+                                  espresso      : "com.android.support.test.espresso:espresso-core:$espressoVersion"
+
+  ]
+}
